@@ -1,13 +1,51 @@
-import React from 'react'
+import React from "react";
 
 function Header() {
   return (
     <div>
-       <header className='bg-blue-600 text-white text-center p-4'>
-                <h1 className='text-2xl font-bold'>My Website</h1>
-            </header>
+      <header className="Nav-items flex justify-between items-center max-w-6xl mx-auto h-[100px] w-[90%]">
+        <div className="logo">
+          <img
+            src="/images/Logo.png"
+            alt="Logo"
+            style={{ width: "100%", maxWidth: "164px" }}
+          />
+        </div>
+
+        <div className="space-x-6 text-[15px] font-semibold">
+          <a href="">Services</a>
+          <a href="">Industries</a>
+          <a href="">Clients</a>
+          <a href="">About us</a>
+          <a href="">Blog</a>
+        </div>
+
+        <div className="space-x-2">
+          <button>
+            <img
+              src="/images/Language.png"
+              alt="Language"
+              style={{ width: "100%", maxWidth: "72px" }}
+            />
+          </button>
+          <button>
+            <img
+              src="/images/Contact.png"
+              alt="Contact"
+              style={{ width: "100%", maxWidth: "143px" }}
+            />
+          </button>
+          <button>
+            <img
+              src="/images/Search.png"
+              alt="Contact"
+              style={{ width: "100%", maxWidth: "72px" }}
+            />
+          </button>
+        </div>
+      </header>
     </div>
-  )
+  );
 }
 
-export default Header
+export default Header;
