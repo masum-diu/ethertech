@@ -3,7 +3,7 @@ import React from "react";
 function Footer() {
   return (
     <div>
-      <footer className=" mx-auto  w-[90%] py-10">
+      <footer className="container py-10" >
         <div className="logo">
           <img
             src="/images/Logo.png"

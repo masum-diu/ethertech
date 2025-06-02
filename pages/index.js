@@ -27,20 +27,24 @@ function Home() {
 
   return (
     <Layout>
-      <div
-        className="card-section mt-20 py-20 px-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-        style={{ backgroundColor: "#181B20" }}
-      >
-        {cards.map((card, index) => (
-          <Card
-            key={index}
-            imgurl={card.imgurl}
-            title={card.title}
-            description={card.description}
-          />
-        ))}
-      </div>
+      <hr className="container" />
+      <br />
+      <div style={{ backgroundColor: "#181B20" }}>
+        <div
+          className="container card-section mt-20 py-20 px-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          
+        >
+          {cards.map((card, index) => (
 
+            <Card
+              key={index}
+              imgurl={card.imgurl}
+              title={card.title}
+              description={card.description}
+            />
+          ))}
+        </div>
+      </div>
       <div className="flex flex-col items-center justify-center h-screen bg-gray-100 text-red-500 text-center px-4">
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore

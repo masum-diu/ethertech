@@ -3,7 +3,7 @@ import React from "react";
 function Header() {
   return (
     <div>
-      <header className="Nav-items flex justify-between items-center max-w-6xl mx-auto h-[100px] w-[90%]">
+      <header className="container Nav-items flex justify-between items-center h-[100px] ">
         <div className="logo">
           <img
             src="/images/Logo.png"

@@ -2,7 +2,7 @@ import React from "react";
 
 function Card({ imgurl, title, description }) {
   return (
-    <div className="max-w-sm rounded-2xl overflow-hidden shadow-lg bg-white p-3">
+    <div className=" rounded-2xl overflow-hidden shadow-lg bg-white p-3">
       <div className="flex items-center space-x-3 py-5">
         <img
           className="object-cover"
