@@ -74,14 +74,17 @@ function Footer() {
               Engineering
             </p>
 
-            <p className="font-normal services-1" style={{ fontSize: "14px" }}>
+            <div
+              className="font-normal services-1"
+              style={{ fontSize: "14px" }}
+            >
               <p className="mt-1">PoC development</p>
               <p className="mt-1">Application development</p>
               <p className="mt-1">Product-oriented delivery</p>
               <p className="mt-1">Enterprise applications</p>
               <p className="mt-1">Application re‑engineering</p>
               <p className="mt-1">Cloud migration</p>
-            </p>
+            </div>
 
             {/* Service Item 2 */}
 
@@ -92,13 +95,16 @@ function Footer() {
               Advisory
             </p>
 
-            <p className="font-normal services-2" style={{ fontSize: "14px" }}>
+            <div
+              className="font-normal services-2"
+              style={{ fontSize: "14px" }}
+            >
               <p className="mt-1">Product and service design</p>
               <p className="mt-1">Cyber security</p>
               <p className="mt-1">Technical feasibility study</p>
               <p className="mt-1">Sustainability consulting</p>
               <p className="mt-1">Agile transformation</p>
-            </p>
+            </div>
           </div>
 
           {/*column 3*/}
@@ -111,7 +117,7 @@ function Footer() {
               Data & AI
             </p>
 
-            <p className="font-normal " style={{ fontSize: "14px" }}>
+            <div className="font-normal " style={{ fontSize: "14px" }}>
               <p className="mt-1">Data science</p>
               <p className="mt-1">Data strategy</p>
               <p className="mt-1">Artificial intelligence</p>
@@ -122,7 +128,7 @@ function Footer() {
               <p className="mt-1">MLOps</p>
               <p className="mt-1">Business intelligence</p>
               <p className="mt-1">Data platforms</p>
-            </p>
+            </div>
           </div>
           {/*column 4*/}
 
@@ -131,7 +137,7 @@ function Footer() {
               Expertise
             </p>
 
-            <p className="font-normal mt-5" style={{ fontSize: "14px" }}>
+            <div className="font-normal mt-5" style={{ fontSize: "14px" }}>
               <p className="mt-1">DevOps</p>
               <p className="mt-1">VR/AR/MR</p>
               <p className="mt-1">Internet of Things</p>
@@ -141,7 +147,7 @@ function Footer() {
               <p className="mt-1">Nearshore development</p>
               <p className="mt-1">UX consulting</p>
               <p className="mt-1">Software development</p>
-            </p>
+            </div>
           </div>
           {/*column 5*/}
           <div>
@@ -149,7 +155,7 @@ function Footer() {
               Industries
             </p>
 
-            <p className="font-normal mt-5" style={{ fontSize: "14px" }}>
+            <div className="font-normal mt-5" style={{ fontSize: "14px" }}>
               <p className="mt-1">Fintech</p>
               <p className="mt-1">Healthcare</p>
               <p className="mt-1">Energy</p>
@@ -159,7 +165,7 @@ function Footer() {
               <p className="mt-1">Automotive</p>
               <p className="mt-1">Agriculture</p>
               <p className="mt-1">Media & Entertainment</p>
-            </p>
+            </div>
           </div>
           {/*column 6*/}
           <div>
@@ -167,7 +173,7 @@ function Footer() {
               Company
             </p>
 
-            <p className="font-normal mt-5" style={{ fontSize: "14px" }}>
+            <div className="font-normal mt-5" style={{ fontSize: "14px" }}>
               <p className="mt-1">About us</p>
               <p className="mt-1">Services</p>
               <p className="mt-1">How we work</p>
@@ -177,7 +183,7 @@ function Footer() {
               <p className="mt-1">Blog</p>
               <p className="mt-1">Careers</p>
               <p className="mt-1">Contact us</p>
-            </p>
+            </div>
           </div>
         </div>
 
