@@ -12,7 +12,7 @@ function Header() {
           />
         </div>
 
-        <div className="space-x-6 text-[15px] font-semibold">
+        <div className="space-x-6 text-[15px] pr-44 font-semibold">
           <a href="">Services</a>
           <a href="">Industries</a>
           <a href="">Clients</a>
@@ -38,7 +38,7 @@ function Header() {
           <button>
             <img
               src="/images/Search.png"
-              alt="Contact"
+              alt="Search"
               style={{ width: "100%", maxWidth: "72px" }}
             />
           </button>
