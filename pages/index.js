@@ -31,7 +31,7 @@ function Home() {
     <Layout>
       <hr className="container" />
       <br />
-      <div className="container">
+      <div className="mx-10">
         <SliderPage></SliderPage>
       </div>
       {/* The  Decentralized part start*/}
@@ -134,7 +134,7 @@ function Home() {
           voluptate iste ex a eaque cum odio? Iure illum perferendis autem quos.
         </p>
       </div>
-      <CaseStudies></CaseStudies>
+      {/* <CaseStudies></CaseStudies> */}
       <Contact></Contact>
     </Layout>
   );
