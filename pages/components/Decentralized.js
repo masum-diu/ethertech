@@ -73,7 +73,7 @@ const Decentralized = () => {
         padding: "50px 0",
       }}
     >
-      <div className="container mx-auto   flex flex-col lg:flex-row justify-between">
+      <div className="md:pl-[calc((90vw-1024px)/2)] md:pr-[calc((90vw-1024px)/2)] xl:pl-[calc((90vw-1080px)/2)] xl:pr-[calc((90vw-1080px)/2)]    flex flex-col lg:flex-row justify-between ">
         {/* Left section */}
         <div className="mt-10">
           <p className="text-white text-[16px] font-bold">
@@ -95,7 +95,7 @@ const Decentralized = () => {
             only five centuries, but also
           </p>
 
-          <div className="flex justify-end mt-10 space-x-3">
+          <div className="flex justify-end mt-10 space-x-3 ">
             <button
               onClick={() => handleScroll("prev")}
               className={`w-[41px] h-[41px] rounded-full border border-gray-400 flex items-center justify-center text-white hover:bg-gray-800 transition ${
@@ -118,10 +118,12 @@ const Decentralized = () => {
         </div>
       </div>
 
-      {/* Slider section with fixed left space */}
-      <div className="mt-10  pl-24 lg:pl-[314px]">
-        <CardSlider cards={cards} sliderRef={sliderRef} />
-      </div>
+     <div className="pt-10 w-screen overflow-hidden">
+  <div className=" md:pl-[calc((90vw-1024px)/2)] xl:pl-[calc((90vw-1080px)/2)] ">
+    <CardSlider cards={cards} sliderRef={sliderRef} />
+  </div>
+</div>
+
     </div>
   );
 };

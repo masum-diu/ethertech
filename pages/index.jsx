@@ -18,7 +18,7 @@ function Home() {
       <SliderPage></SliderPage>
       <Decentralized></Decentralized>
       <OurServices></OurServices>
-      <div className="flex flex-col items-center justify-center h-screen bg-gray-100 text-red-500 text-center px-4"></div>
+      {/* <div className="flex flex-col items-center justify-center h-screen bg-gray-100 text-red-500 text-center px-4"></div> */}
       <OurPartner />
       <OurClients></OurClients>
       <IndustriesService></IndustriesService>
