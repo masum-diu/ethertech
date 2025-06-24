@@ -4,7 +4,7 @@ const Contact = () => {
       <div className="container mx-auto flex flex-col md:flex-row gap-10 px-4">
         {/* LEFT SIDE */}
         <div className="md:w-1/2">
-          <p className="text-white text-[16px] font-bold">GET TOUCH</p>
+          <p className="text-white text-sm font-extrabold">GET TOUCH</p>
 
           <p className="text-white text-[40px] font-bold max-w-[500px] leading-snug mt-4">
             <span className="text-[#FCB813]">
