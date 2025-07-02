@@ -125,22 +125,22 @@ export const OurServices = () => {
   };
 
   return (
-    <section className="overflow-x-hidden px-8 py-16 bg-white">
+    <section className="overflow-x-hidden px-4 lg:pl-24 lg:pr-6 py-16 bg-white">
       {/* 1. Top Section (restored to previous flex row design) */}
-      <div className="max-w-[1500px] mx-auto mb-12 flex flex-col lg:flex-row justify-between gap-12">
-        <div className="w-full">
+      <div className="mb-12 flex flex-col lg:flex-row justify-between gap-30">
+        <div className="w-full px-40">
           <p className="text-sm font-extrabold text-gray-800">OUR SERVICES</p>
           <h2 className="text-4xl font-bold mt-4 text-black">
             <span className="text-[#FCB813]">World-Class</span> Tech Services
           </h2>
         </div>
-        <div className="w-full text-[16px] text-[#939393] font-manrope leading-relaxed">
+        <div className="w-full text-[16px] text-[#939393] font-manrope leading-relaxed px-50">
           See how we can help you reach your goals. Answer three questions to help us match our expertise and software solutions to your needs. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
         </div>
       </div>
 
       {/* 2. Main Section: Left (Tabs) + Right (Cards/Results) */}
-      <div className="max-w-[1500px] mx-auto flex flex-col lg:flex-row gap-8">
+      <div className="flex flex-col lg:flex-row gap-8">
         {/* Left Section: Accordion/Tabs */}
         <div className="w-full lg:w-[528px] shrink-0">
           <div className="rounded-xl border border-gray-200 p-6 shadow-sm bg-white h-full">
@@ -215,27 +215,26 @@ export const OurServices = () => {
                   }}
                   className="flex-shrink-0 group relative overflow-hidden transition-all duration-300 rounded-2xl"
                 >
-                  {/* Dark background on hover */}
-                  <div className="absolute inset-0 bg-[#181B20] opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0" />
-                  {/* Fade-in image */}
-                  <img
-                    src={card.image}
-                    alt="Service"
-                    className="absolute bottom-6 left-6 right-6 h-28 object-cover rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"
-                  />
-                  <div className="h-full w-full border border-gray-200 rounded-xl p-6 flex flex-col justify-between bg-white group-hover:bg-[#181B20] transition-all duration-300 relative z-20">
+                  <div className="h-full w-full border border-gray-200 rounded-xl p-6 flex flex-col bg-white group-hover:bg-[#181B20] transition-all duration-300 relative z-20">
+                    {/* Category at the top */}
                     <div>
-                      <p className="text-xs text-gray-500 group-hover:text-white mb-2">
+                      <p className="text-xs text-gray-500 group-hover:text-white mb-2 text-left">
                         {card.category}
                       </p>
-                      <h3 className="text-xl font-bold text-black group-hover:text-white mb-2 leading-snug">
+                    </div>
+                    {/* Title and description centered in the middle */}
+                    <div className="flex-1 flex flex-col justify-center ">
+                      <h3 className="text-xl font-bold text-black group-hover:text-white mb-2 leading-snug text-left">
                         {card.title}
                       </h3>
-                      <p className="text-sm text-gray-600 group-hover:text-gray-300">
+                      <p className="text-sm text-gray-600 group-hover:text-gray-300 text-left">
                         {card.description}
                       </p>
                     </div>
-                    <div className="mt-6 relative">
+                    {/* Image at the bottom */}
+
+                    {/* Navigation/Arrow section remains unchanged */}
+                    <div className="mt-6 relative w-full">
                       <div className="flex items-center justify-start w-full rounded-xl border border-gray-200 group-hover:border-white px-4 py-3 transition group">
                         <div className="w-6 h-6 rounded-full border border-gray-400 group-hover:border-white flex items-center justify-center transition-all duration-500 group-hover:translate-x-4 group-hover:scale-110">
                           <ArrowRight
