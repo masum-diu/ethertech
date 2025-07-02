@@ -47,14 +47,16 @@ function Header() {
               <img
                 src="/navbar_image/Group.png"
                 alt="Lang"
-                className="w-6 h-6 lg:w-4 lg:h-4"
+                className="w-6 h-6 lg:w-[16px] lg:h-[16px] object-cover"
               />
-              <span className="text-sm font-semibold text-gray-600">ENG</span>
+              <span className="text-[14px] font-semibold  text-gray-600">
+                ENG
+              </span>
             </div>
 
             <Link
               href="#"
-              className="inline-flex items-center font-semibold px-4 py-3  bg-gray-900 text-white text-[15px] font-medium rounded-3xl  hover:bg-gray-800 transition"
+              className="flex justify-center items-center font-semibold w-[143px] h-[56px] rounded-[24px] bg-gray-900 text-white text-[15px] font-medium rounded-3xl hover:bg-gray-800 transition"
             >
               Contact us
               {/* contact us icon */}
@@ -86,11 +88,11 @@ function Header() {
 
             <button
               onClick={() => setShowSearch(!showSearch)}
-              className="w-12 h-12 bg-gray-200 rounded-[20px] flex items-center justify-center hover:bg-gray-300 transition"
+              className="w-[72px] h-[56px] bg-gray-200 rounded-[24px] flex items-center justify-center hover:bg-gray-300 transition"
             >
               {showSearch ? (
                 <svg
-                  className="w-6 h-6 text-gray-800"
+                  className="w-[16px] h-[16px] text-gray-800"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -105,7 +107,7 @@ function Header() {
                 </svg>
               ) : (
                 <svg
-                  className="w-6 h-6 text-gray-800"
+                  className="w-[16px] h-[16px]  text-gray-800"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="2"

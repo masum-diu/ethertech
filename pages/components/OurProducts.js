@@ -10,7 +10,7 @@ const OurProducts = () => {
             OUR PRODUCTS
           </p>
 
-          <p className="text-black text-[40px] font-bold max-w-[529px] mt-9">
+          <p className="text-black text-[40px] font-bold max-w-[529px] mt-[30px]">
             <span className="text-[#FCB813]">Explore our </span>own products
           </p>
         </div>
@@ -28,7 +28,7 @@ const OurProducts = () => {
         </div>
       </div>
 
-      <div className=" py-10">
+      <div className=" mt-10">
         <ExpandingSlider></ExpandingSlider>
       </div>
     </div>

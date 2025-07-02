@@ -66,31 +66,31 @@ const IndustriesService = () => {
   };
 
   return (
-    <div className="mb-20 p-10">
-      <div className=" container mx-auto  flex flex-col md:flex-row justify-between ">
-        <div>
-          <p className="text-sm font-extrabold text-gray-800  uppercase tracking-wide">
-            INDUSTRIES
-          </p>
-
-          <p className="text-black text-[40px] font-bold max-w-[529px] ">
-            <span className="text-[#FCB813]">Industries </span>We Serve
+    <div className="mb-20 ">
+      <div className=" mb-5 md:pl-[calc((90vw-1024px)/2)] md:pr-[calc((90vw-1024px)/2)] xl:pl-[calc((90vw-1080px)/2)] xl:pr-[calc((90vw-1080px)/2)] flex flex-col lg:flex-row justify-between ">
+        <div className="w-full  md:px-0 xl:px-0 ">
+          <p className="text-sm font-extrabold text-gray-800">INDUSTRIES</p>
+          <p className="text-black text-[40px] font-bold mt-[25px]">
+            <span style={{ color: "#FCB813" }}>Industries</span> We Serve
           </p>
         </div>
 
-        <div>
-          <p className="text-[#939393] text-[16px] max-w-[718px]  leading-relaxed">
-            See how we can help you reach your goals. Answer three questions to
-            help us match our expertise and software solutions to your needs.
+        <div className="w-full  md:px-0 xl:px-0 ">
+          <p
+            className="text-white text-[16px]  font-manrope "
+            style={{ color: "#939393" }}
+          >
+            See how we can help you reach your goals Answer three questions to
+            help us match our expertise and software solutions to your needs
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry's standard dummy text
             ever since the 1500s, when an unknown printer took a galley of type
             and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also...
+            only five centuries, but also
           </p>
         </div>
       </div>
-      <div className="container left-right-button flex justify-end mt-10 space-x-3">
+      <div className="container left-right-button flex justify-end mt-20 space-x-3">
         <button
           onClick={() => handleScroll("prev")}
           className={`w-[41px] h-[41px] rounded-full border border-gray-400 flex items-center justify-center text-black hover:bg-gray-300 transition  ${
@@ -113,7 +113,7 @@ const IndustriesService = () => {
 
       {/* slider part */}
 
-      <div className="container card-section mt-10 py-10  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 overflow-hidden">
+      <div className=" md:pl-[calc((90vw-1024px)/2)] xl:pl-[calc((90vw-1080px)/2)] mt-4">
         <AnimatedSliderCart
           cards={cards}
           sliderRef={sliderRef}

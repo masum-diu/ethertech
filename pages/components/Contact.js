@@ -94,7 +94,7 @@ const Contact = () => {
             <div className="md:col-span-2">
               <button
                 type="submit"
-                className="mt-4 bg-white text-black font-semibold py-2 px-6 rounded-full hover:bg-gray-200 transition"
+                className="flex justify-center items-center font-semibold w-[143px] h-[56px] rounded-[24px] bg-[#FFFFFF] text-[181B20] text-[15px] font-medium rounded-3xl hover:bg-[#919191] transition"
               >
                 Contact us →
               </button>

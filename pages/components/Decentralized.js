@@ -63,14 +63,13 @@ const Decentralized = () => {
 
   return (
     <div
-      className="mt-10"
+      className="mt-10 py-[50px]"
       style={{
         backgroundColor: "#181B20",
         backgroundImage: "url('images/Point Section.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
-        padding: "50px 0",
       }}
     >
       <div className="md:pl-[calc((90vw-1024px)/2)] md:pr-[calc((90vw-1024px)/2)] xl:pl-[calc((90vw-1080px)/2)] xl:pr-[calc((90vw-1080px)/2)]    flex flex-col lg:flex-row justify-between ">
@@ -118,12 +117,11 @@ const Decentralized = () => {
         </div>
       </div>
 
-     <div className="pt-10 w-screen overflow-hidden">
-  <div className=" md:pl-[calc((90vw-1024px)/2)] xl:pl-[calc((90vw-1080px)/2)] ">
-    <CardSlider cards={cards} sliderRef={sliderRef} />
-  </div>
-</div>
-
+      <div className="pt-10  overflow-hidden">
+        <div className=" md:pl-[calc((90vw-1024px)/2)] xl:pl-[calc((90vw-1080px)/2)] ">
+          <CardSlider cards={cards} sliderRef={sliderRef} />
+        </div>
+      </div>
     </div>
   );
 };

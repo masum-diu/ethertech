@@ -1,8 +1,8 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Renderer, Camera, Geometry, Program, Mesh } from "ogl";
 
+// Convert hex to normalized RGB
 const defaultColors = ["#ffffff", "#ffffff", "#ffffff"];
-
 const hexToRgb = (hex) => {
   hex = hex.replace(/^#/, "");
   if (hex.length === 3) {
@@ -18,6 +18,7 @@ const hexToRgb = (hex) => {
   return [r, g, b];
 };
 
+// Particle shaders
 const vertex = /* glsl */ `
   attribute vec3 position;
   attribute vec4 random;
@@ -130,10 +131,7 @@ const Particles = ({
     const positions = new Float32Array(count * 3);
     const randoms = new Float32Array(count * 4);
     const colors = new Float32Array(count * 3);
-    const palette =
-      particleColors && particleColors.length > 0
-        ? particleColors
-        : defaultColors;
+    const palette = particleColors?.length ? particleColors : defaultColors;
 
     for (let i = 0; i < count; i++) {
       let x, y, z, len;
@@ -149,8 +147,10 @@ const Particles = ({
         [Math.random(), Math.random(), Math.random(), Math.random()],
         i * 4
       );
-      const col = hexToRgb(palette[Math.floor(Math.random() * palette.length)]);
-      colors.set(col, i * 3);
+      colors.set(
+        hexToRgb(palette[Math.floor(Math.random() * palette.length)]),
+        i * 3
+      );
     }
 
     const geometry = new Geometry(gl, {
@@ -189,9 +189,6 @@ const Particles = ({
       if (moveParticlesOnHover) {
         particles.position.x = -mouseRef.current.x * particleHoverFactor;
         particles.position.y = -mouseRef.current.y * particleHoverFactor;
-      } else {
-        particles.position.x = 0;
-        particles.position.y = 0;
       }
 
       if (!disableRotation) {
@@ -207,13 +204,10 @@ const Particles = ({
 
     return () => {
       window.removeEventListener("resize", resize);
-      if (moveParticlesOnHover) {
+      if (moveParticlesOnHover)
         container.removeEventListener("mousemove", handleMouseMove);
-      }
       cancelAnimationFrame(animationFrameId);
-      if (container.contains(gl.canvas)) {
-        container.removeChild(gl.canvas);
-      }
+      if (container.contains(gl.canvas)) container.removeChild(gl.canvas);
     };
   }, [
     particleCount,
@@ -233,12 +227,35 @@ const Particles = ({
   );
 };
 
+// ---------- Main Section ----------
 export default function WorldwideOperations() {
+  const videoData = [
+    { src: "/videos/Syn.mp4", label: "Singapore" },
+    { src: "/videos/Bng.mp4", label: "Bangladesh" },
+    { src: "/videos/Aus.mp4", label: "Australia" },
+  ];
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % videoData.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [videoData.length]);
+
+  const currentLabel = videoData[currentIndex].label;
+  const otherLabels = videoData
+    .filter((_, idx) => idx !== currentIndex)
+    .map((item) => item.label);
+
   return (
-    <section className="container flex justify-center items-center w-full mt-20  bg-gray-100">
-      <div className="relative  w-full max-w-7xl rounded-2xl overflow-hidden py-24 bg-[#181B20] text-white p-12 z-10">
+    <section className="container flex justify-center items-center w-full mt-20 bg-gray-100">
+      <div className="relative w-full max-w-7xl rounded-2xl overflow-hidden py-24 bg-[#181B20] text-white px-12 z-10 flex gap-12">
+        {/* Full background particles */}
         <Particles particleColors={["#ffffff"]} particleCount={250} />
-        <div className="relative  z-10 max-w-xl">
+
+        {/* Left Section */}
+        <div className="relative z-10 flex-1 max-w-xl">
           <p className="text-sm font-bold uppercase tracking-wider text-white mb-2">
             We have
           </p>
@@ -259,6 +276,55 @@ export default function WorldwideOperations() {
             value and lasting impact.
           </p>
         </div>
+
+        {/* Right Section */}
+        {/* Right Section */}
+        <div className="relative z-10 flex-1 flex flex-col items-start gap-6 mt-2">
+          <div className="flex items-center gap-4">
+            {/* "in" text outside video box */}
+            <span className="text-5xl font-light text-white min-w-[40px]">
+              in
+            </span>
+
+            {/* Video box with animated text inside */}
+            <div className="relative w-[480px] h-[150px] rounded-xl overflow-hidden shadow-lg">
+              {videoData.map((video, index) => (
+                <video
+                  key={index}
+                  src={video.src}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 ${
+                    index === currentIndex
+                      ? "opacity-100 z-10"
+                      : "opacity-0 z-0"
+                  }`}
+                />
+              ))}
+
+              {/* Animated Text Overlay */}
+              <div className="absolute inset-0 flex items-center pl-6 z-20">
+                <span
+                  key={currentLabel}
+                  className="text-white text-[42px] font-light animate-fadeUp"
+                >
+                  {currentLabel}
+                </span>
+              </div>
+            </div>
+          </div>
+
+          {/* Other countries below */}
+          <div className="pl-[60px] flex flex-col gap-2 text-white text-[20px] font-light">
+            {otherLabels.map((label, i) => (
+              <span key={i}>{label}</span>
+            ))}
+          </div>
+        </div>
+
+        {/* Right Section end*/}
       </div>
     </section>
   );
