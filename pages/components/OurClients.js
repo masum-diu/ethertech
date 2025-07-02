@@ -5,7 +5,7 @@ import Marquee from "react-fast-marquee";
 const OurClients = () => {
   return (
     <div className="mt-20 bg-[#181B20] py-24 text-white relative overflow-hidden mb-20">
-      <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between relative z-10">
+      <div className=" mx-auto  md:pl-[calc((90vw-1024px)/2)] xl:pl-[calc((90vw-1080px)/2)] mt-4 flex flex-col md:flex-row justify-between relative z-10">
         {/* Left Section */}
         <div className="md:w-1/2 relative">
           {/* Foreground Text */}
@@ -24,8 +24,8 @@ const OurClients = () => {
             <Image
               src="/images/cllogo.png"
               alt="Background Logo"
-              width={500}
-              height={500}
+              width={631}
+              height={404}
               className="opacity-100"
             />
           </div>
@@ -39,20 +39,20 @@ const OurClients = () => {
             <div className="flex items-center gap-4 text-center">
               <Image
                 src="/images/handshake.png"
-                width={50}
-                height={50}
+                width={80}
+                height={80}
                 alt="Handshake"
               />
               <div>
-                <p className="text-2xl font-bold">1,120+</p>
+                <p className="text-[56px] font-bold">1,120+</p>
                 <p className="text-[16px] mt-1">Completed Projects</p>
               </div>
             </div>
             {/* Second Stat */}
             <div className="flex items-center gap-4 text-center">
-              <Image src="/images/team.png" width={50} height={50} alt="Team" />
+              <Image src="/images/team.png" width={80} height={80} alt="Team" />
               <div>
-                <p className="text-2xl font-bold">50+</p>
+                <p className="text-[56px]  font-bold">50+</p>
                 <p className="text-[16px] mt-1">Team Members</p>
               </div>
             </div>
@@ -60,12 +60,12 @@ const OurClients = () => {
             <div className="flex items-center gap-4 text-center">
               <Image
                 src="/images/group.png"
-                width={50}
-                height={50}
+                width={90}
+                height={90}
                 alt="Group"
               />
               <div>
-                <p className="text-2xl font-bold">100%</p>
+                <p className="text-[56px]  font-bold">100%</p>
                 <p className="text-[16px] mt-1">Satisfaction Rate</p>
               </div>
             </div>
@@ -73,12 +73,12 @@ const OurClients = () => {
             <div className="flex items-center gap-4 text-center">
               <Image
                 src="/images/clock 2.png"
-                width={50}
-                height={50}
+                width={80}
+                height={80}
                 alt="Clock"
               />
               <div>
-                <p className="text-2xl font-bold">8+ Years</p>
+                <p className="text-[56px]  font-bold">8+ Years</p>
                 <p className="text-[16px] mt-1">Completed Projects</p>
               </div>
             </div>
@@ -92,43 +92,43 @@ const OurClients = () => {
           src="/images/cl1.png"
           alt="Client 1"
           className="mx-20"
-          width={50}
-          height={50}
+          width={71}
+          height={70}
         />
         <Image
           src="/images/cl2.png"
           alt="Client 2"
           className="mx-20"
-          width={70}
-          height={70}
+          width={114}
+          height={51}
         />
         <Image
           src="/images/cl3.png"
           alt="Client 3"
           className="mx-20"
-          width={60}
-          height={60}
+          width={100}
+          height={70}
         />
         <Image
           src="/images/cl4.png"
           alt="Client 4"
           className="mx-20"
-          width={70}
-          height={70}
+          width={114}
+          height={67}
         />
         <Image
           src="/images/cl5.png"
           alt="Client 5"
           className="mx-20"
-          width={60}
-          height={60}
+          width={114}
+          height={65}
         />
         <Image
           src="/images/cl6.png"
           alt="Client 6"
           className="mx-20"
-          width={60}
-          height={60}
+          width={107}
+          height={71}
         />
       </Marquee>
     </div>

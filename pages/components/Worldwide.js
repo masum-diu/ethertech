@@ -249,82 +249,76 @@ export default function WorldwideOperations() {
     .map((item) => item.label);
 
   return (
-    <section className="container flex justify-center items-center w-full mt-20 bg-gray-100">
-      <div className="relative w-full max-w-7xl rounded-2xl overflow-hidden py-24 bg-[#181B20] text-white px-12 z-10 flex gap-12">
-        {/* Full background particles */}
+    <section className="w-full bg-gray-100 mt-20 flex justify-center items-center">
+      <div className="relative max-w-7xl w-full bg-[#181B20] text-white rounded-2xl px-12 py-24 overflow-hidden flex items-center justify-center">
+        {/* Particles Background */}
         <Particles particleColors={["#ffffff"]} particleCount={250} />
 
-        {/* Left Section */}
-        <div className="relative z-10 flex-1 max-w-xl">
-          <p className="text-sm font-bold uppercase tracking-wider text-white mb-2">
-            We have
-          </p>
-          <h2 className="text-4xl font-light leading-snug mb-8">
-            <span className="text-[#FCB813] font-semibold">Worldwide</span>{" "}
-            <span className="text-white">operations</span>
-          </h2>
-          <p className="text-sm leading-relaxed text-gray-300">
-            Ether Technologies is a global software company operating in
-            Bangladesh and Australia, empowering businesses with cutting-edge
-            solutions in software development, IT consultancy, and digital
-            transformation. With a diverse team of 200+ professionals, we
-            deliver scalable, secure, and future-ready technologies that drive
-            efficiency and growth. Trusted by clients worldwide, Ether is
-            committed to innovation, quality, and long-term success. Our agile
-            approach ensures faster delivery and greater adaptability to client
-            needs. We focus on building intelligent systems that create real
-            value and lasting impact.
-          </p>
-        </div>
+        {/* Content Row: Left + Right */}
+        <div className="relative  flex  items-center justify-between gap-10 w-full px-[100px]">
+          {/* Left Section */}
+          <div className="flex-1 max-w-xl">
+            <p className="text-sm font-bold uppercase tracking-wider text-white mb-2">
+              We have
+            </p>
+            <h2 className="text-[60px] font-light leading-snug mb-6">
+              <span className="text-[#FCB813] font-semibold">Worldwide</span>{" "}
+              <span className="text-white">operations</span>
+            </h2>
+            <p className="text-sm leading-relaxed text-gray-300">
+              Ether Technologies is a global software company operating in
+              Bangladesh, Australia and Singapore, empowering businesses with
+              cutting-edge solutions in software development, IT consultancy,
+              and digital transformation. With a diverse team of 200+
+              professionals, we deliver scalable, secure, and future-ready
+              technologies that drive efficiency and growth. Trusted by clients
+              worldwide, Ether is committed to innovation, quality, and
+              long-term success. Our agile approach ensures faster delivery and
+              greater adaptability to client needs. We focus on building
+              intelligent systems that create real value and lasting impact.
+            </p>
+          </div>
 
-        {/* Right Section */}
-        {/* Right Section */}
-        <div className="relative z-10 flex-1 flex flex-col items-start gap-6 mt-2">
-          <div className="flex items-center gap-4">
-            {/* "in" text outside video box */}
-            <span className="text-5xl font-light text-white min-w-[40px]">
-              in
-            </span>
+          {/* Right Section */}
+          <div className="flex-1 flex flex-col gap-6 items-end ">
+            <div className="flex items-center gap-4">
+              <span className="text-5xl font-light text-white">in</span>
 
-            {/* Video box with animated text inside */}
-            <div className="relative w-[480px] h-[150px] rounded-xl overflow-hidden shadow-lg">
-              {videoData.map((video, index) => (
-                <video
-                  key={index}
-                  src={video.src}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 ${
-                    index === currentIndex
-                      ? "opacity-100 z-10"
-                      : "opacity-0 z-0"
-                  }`}
-                />
-              ))}
+              <div className="relative w-[480px] h-[150px] rounded-xl overflow-hidden shadow-lg">
+                {videoData.map((video, index) => (
+                  <video
+                    key={index}
+                    src={video.src}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 ${
+                      index === currentIndex
+                        ? "opacity-100 z-10"
+                        : "opacity-0 z-0"
+                    }`}
+                  />
+                ))}
 
-              {/* Animated Text Overlay */}
-              <div className="absolute inset-0 flex items-center pl-6 z-20">
-                <span
-                  key={currentLabel}
-                  className="text-white text-[42px] font-light animate-fadeUp"
-                >
-                  {currentLabel}
-                </span>
+                <div className="absolute inset-0 flex items-center pl-6 z-20">
+                  <span
+                    key={currentLabel}
+                    className="text-white text-[42px] font-light animate-fadeUp"
+                  >
+                    {currentLabel}
+                  </span>
+                </div>
               </div>
             </div>
-          </div>
 
-          {/* Other countries below */}
-          <div className="pl-[60px] flex flex-col gap-2 text-white text-[20px] font-light">
-            {otherLabels.map((label, i) => (
-              <span key={i}>{label}</span>
-            ))}
+            <div className=" flex flex-col gap-2 text-white text-[20px] font-light text-left  min-w-[440px] ">
+              {otherLabels.map((label, i) => (
+                <span key={i}>{label}</span>
+              ))}
+            </div>
           </div>
         </div>
-
-        {/* Right Section end*/}
       </div>
     </section>
   );
