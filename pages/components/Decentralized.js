@@ -23,13 +23,13 @@ const Decentralized = () => {
         "We provide necessary operational support from Bangladesh to USA, Canada, Australia, Singapore and Vietnam.",
     },
     {
-      imgurl: "/images/card4.png",
+      imgurl: "/images/card3.png",
       title: "Scalable infrastructure",
       description:
         "Our cloud infrastructure scales seamlessly to match your growing demands.",
     },
     {
-      imgurl: "/images/card5.png",
+      imgurl: "/images/card3.png",
       title: "Secure cloud hosting",
       description: "Security and reliability in every layer of our tech stack.",
     },

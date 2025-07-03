@@ -15,8 +15,8 @@ function Home() {
   return (
     <Layout>
       <hr className="container" />
-      <SliderPage></SliderPage>
-      <Decentralized></Decentralized>
+      <SliderPage />
+      <Decentralized />
       <OurServices></OurServices>
       {/* <div className="flex flex-col items-center justify-center h-screen bg-gray-100 text-red-500 text-center px-4"></div> */}
       <OurPartner />

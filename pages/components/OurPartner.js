@@ -11,7 +11,7 @@ const OurPartner = () => {
   ];
 
   return (
-    <div className="relative py-12 bg-white overflow-hidden mt-20">
+    <div className="relative py-12 bg-white overflow-hidden ">
       {/* Background world map image */}
       <div className="absolute inset-0 flex justify-center items-center pointer-events-none z-0">
         <img

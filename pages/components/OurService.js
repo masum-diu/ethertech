@@ -54,12 +54,12 @@ export const OurServices = () => {
     title: "Product and service design",
     description:
       "Get strategic guidance on creating best-in-class domain-specific technology solutions",
-    image: "/images/Slider-card.png", // <-- Make sure this exists in /public/images
+    image: "/images/Slider-card.png",
   });
 
   const cardWidth = 360;
-  const cardGap = 24;
-  const visibleCards = 3;
+  const cardGap = 16;
+  const visibleCards = 4.5; // Adjusted for better visibility
 
   const handleNext = () => {
     if (startIndex < cards.length - visibleCards) {
@@ -74,26 +74,20 @@ export const OurServices = () => {
   };
 
   const handleTagClick = (serviceIndex, tagIndex, tag) => {
-    // Select only one tag per service - clear previous selections in this service only
     const newSelectedTags = {};
-
-    // Clear all selections for this specific service
-    Object.keys(selectedTags).forEach(key => {
-      const [serviceIdx] = key.split('-');
+    Object.keys(selectedTags).forEach((key) => {
+      const [serviceIdx] = key.split("-");
       if (parseInt(serviceIdx) !== serviceIndex) {
         newSelectedTags[key] = selectedTags[key];
       }
     });
-
-    // Add the new selection for this service
     const tagKey = `${serviceIndex}-${tagIndex}`;
     newSelectedTags[tagKey] = true;
-
     setSelectedTags(newSelectedTags);
-
-    // Close current tab and open next tab
-    // If it's the last tab, stay on the last tab instead of cycling to first
-    const nextIndex = serviceIndex === services.length - 1 ? serviceIndex : (serviceIndex + 1) % services.length;
+    const nextIndex =
+      serviceIndex === services.length - 1
+        ? serviceIndex
+        : (serviceIndex + 1) % services.length;
     setOpenIndex(nextIndex);
   };
 
@@ -102,12 +96,11 @@ export const OurServices = () => {
     return selectedTags[tagKey] || false;
   };
 
-  // Helper to get selected tags per service
   const getSelectedTagsPerService = () => {
     const selected = [];
     Object.keys(selectedTags).forEach((key) => {
       if (selectedTags[key]) {
-        const [serviceIdx, tagIdx] = key.split('-').map(Number);
+        const [serviceIdx, tagIdx] = key.split("-").map(Number);
         selected.push({
           serviceIdx,
           tagIdx,
@@ -115,7 +108,6 @@ export const OurServices = () => {
         });
       }
     });
-    // Sort by service index for consistent order
     return selected.sort((a, b) => a.serviceIdx - b.serviceIdx);
   };
 
@@ -125,25 +117,31 @@ export const OurServices = () => {
   };
 
   return (
-    <section className="overflow-x-hidden px-4 lg:pl-24 lg:pr-6 py-16 bg-white">
-      {/* 1. Top Section (restored to previous flex row design) */}
-      <div className="mb-12 flex flex-col lg:flex-row justify-between gap-30">
-        <div className="w-full px-40">
-          <p className="text-sm font-extrabold text-gray-800">OUR SERVICES</p>
-          <h2 className="text-4xl font-bold mt-4 text-black">
+    <section className="overflow-x-hidden py-16 bg-white">
+      <div className=" md:pl-[calc((90vw-1024px)/2)] md:pr-[calc((90vw-1024px)/2)] xl:pl-[calc((90vw-1080px)/2)] xl:pr-[calc((90vw-1080px)/2)]  mb-12 flex flex-col lg:flex-row justify-between items-start ">
+        <div className="w-full lg:w-1/2">
+          <p className="text-[16px] font-extrabold text-gray-800">
+            OUR SERVICES
+          </p>
+          <h2 className="text-[40px] font-bold mt-4 text-black">
             <span className="text-[#FCB813]">World-Class</span> Tech Services
           </h2>
         </div>
-        <div className="w-full text-[16px] text-[#939393] font-manrope leading-relaxed px-50">
-          See how we can help you reach your goals. Answer three questions to help us match our expertise and software solutions to your needs. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+        <div className="w-full lg:w-1/2  text-[16px] text-[#939393] leading-relaxed">
+          See how we can help you reach your goals Answer three questions to
+          help us match our expertise and software solutions to your needs Lorem
+          Ipsum is simply dummy text of the printing and typesetting industry.
+          Lorem Ipsum has been the industry's standard dummy text ever since the
+          1500s, when an unknown printer took a galley of type and scrambled it
+          to make a type specimen book. It has survived not only five centuries,
+          but also
         </div>
       </div>
-
-      {/* 2. Main Section: Left (Tabs) + Right (Cards/Results) */}
-      <div className="flex flex-col lg:flex-row gap-8">
-        {/* Left Section: Accordion/Tabs */}
-        <div className="w-full lg:w-[528px] shrink-0">
-          <div className="rounded-xl border border-gray-200 p-6 shadow-sm bg-white h-full">
+      {/* the whole slider part starts*/}
+      <div className="flex flex-col lg:flex-row  mt-20">
+        {/* Left: Accordion */}
+        <div className="w-full lg:w-[560px] px-9">
+          <div className="w-[528px] rounded-xl border border-gray-200 p-6 shadow-sm bg-white">
             {services.map((service, idx) => (
               <div
                 key={idx}
@@ -167,9 +165,13 @@ export const OurServices = () => {
                     {openIndex === idx ? "−" : "+"}
                   </span>
                 </div>
-                <div className={`mt-4 flex flex-wrap gap-2 transition-all duration-300 overflow-hidden ${
-                  openIndex === idx ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-                }`}>
+                <div
+                  className={`mt-4 flex flex-wrap gap-2 transition-all duration-300 overflow-hidden ${
+                    openIndex === idx
+                      ? "max-h-96 opacity-100"
+                      : "max-h-0 opacity-0"
+                  }`}
+                >
                   {service.tags.map((tag, tagIdx) => (
                     <span
                       key={tagIdx}
@@ -187,22 +189,21 @@ export const OurServices = () => {
                     </span>
                   ))}
                 </div>
-                {openIndex === idx && (
-                  <div className="w-full h-48" />
-                )}
               </div>
             ))}
           </div>
         </div>
 
-        {/* Right Section: Cards/Results + Navigation + Selected Tags Bar */}
-        <div className="flex-1 min-w-0 flex flex-col relative">
-          <div className="w-full overflow-hidden">
+        {/* Right: Slider Cards */}
+        <div className="flex-1 pl-8 min-w-0 flex flex-col relative">
+          <div className="overflow-hidden relative">
             <div
               className="flex transition-transform duration-500 ease-in-out"
               style={{
                 width: `${(cardWidth + cardGap) * cards.length}px`,
-                transform: `translateX(-${(cardWidth + cardGap) * startIndex}px)`,
+                transform: `translateX(-${
+                  (cardWidth + cardGap) * startIndex
+                }px)`,
               }}
             >
               {cards.map((card, i) => (
@@ -216,14 +217,10 @@ export const OurServices = () => {
                   className="flex-shrink-0 group relative overflow-hidden transition-all duration-300 rounded-2xl"
                 >
                   <div className="h-full w-full border border-gray-200 rounded-xl p-6 flex flex-col bg-white group-hover:bg-[#181B20] transition-all duration-300 relative z-20">
-                    {/* Category at the top */}
-                    <div>
-                      <p className="text-xs text-gray-500 group-hover:text-white mb-2 text-left">
-                        {card.category}
-                      </p>
-                    </div>
-                    {/* Title and description centered in the middle */}
-                    <div className="flex-1 flex flex-col justify-center ">
+                    <p className="text-xs text-gray-500 group-hover:text-white mb-2 text-left">
+                      {card.category}
+                    </p>
+                    <div className="flex-1 flex flex-col justify-center">
                       <h3 className="text-xl font-bold text-black group-hover:text-white mb-2 leading-snug text-left">
                         {card.title}
                       </h3>
@@ -231,12 +228,9 @@ export const OurServices = () => {
                         {card.description}
                       </p>
                     </div>
-                    {/* Image at the bottom */}
-
-                    {/* Navigation/Arrow section remains unchanged */}
                     <div className="mt-6 relative w-full">
-                      <div className="flex items-center justify-start w-full rounded-xl border border-gray-200 group-hover:border-white px-4 py-3 transition group">
-                        <div className="w-6 h-6 rounded-full border border-gray-400 group-hover:border-white flex items-center justify-center transition-all duration-500 group-hover:translate-x-4 group-hover:scale-110">
+                      <div className="flex items-center justify-start w-full w-[328px] h-[120px] mb-4  border-gray-200 group-hover:border-white px-4 py-3 transition group">
+                        <div className="w-6 h-6 bg-white rounded-full border border-gray-400 group-hover:border-white flex items-center justify-center transition-all duration-500 group-hover:translate-x-4 group-hover:scale-110">
                           <ArrowRight
                             size={14}
                             className="text-black group-hover:text-white transition-all duration-300 group-hover:translate-x-1"
@@ -244,21 +238,15 @@ export const OurServices = () => {
                         </div>
                         <div className="ml-2 h-[1px] bg-gray-200 group-hover:bg-white w-full transition-all duration-500" />
                       </div>
-                      {/* Hover Image */}
-                      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
-                        <img
-                          src={card.image}
-                          alt="Service Preview"
-                          className="w-full h-full object-cover rounded-xl"
-                        />
-                        <div className="absolute inset-0 bg-black bg-opacity-50 rounded-xl" />
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          <div className="flex items-center justify-center w-12 h-12 rounded-full bg-white bg-opacity-20 backdrop-blur-sm">
-                            <ArrowRight
-                              size={20}
-                              className="text-white animate-pulse"
-                            />
-                          </div>
+
+                      {/* Image Hover Section */}
+                      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+                        <div className="w-[328px] h-[120px] overflow-hidden rounded-xl shadow-lg">
+                          <img
+                            src={card.image}
+                            alt="Service Preview"
+                            className="w-full h-full object-cover"
+                          />
                         </div>
                       </div>
                     </div>
@@ -267,40 +255,42 @@ export const OurServices = () => {
               ))}
             </div>
           </div>
-          {/* Navigation Arrows and Selected tags bar aligned at the bottom */}
-          <div className="mt-8 flex items-center w-full gap-x-8">
-            {/* Navigation Arrows */}
+
+          {/* Navigation + Selected Filters */}
+          <div className="mt-8 flex items-center w-full gap-x-4 justify-between">
             <div className="flex gap-3">
               <button
                 onClick={handlePrev}
                 disabled={startIndex === 0}
-                className="w-10 h-10 rounded-full border border-black flex items-center justify-center hover:bg-black hover:text-white transition disabled:opacity-30"
+                className="w-[41px] h-[41px] rounded-full border border-black flex items-center justify-center hover:bg-black hover:text-white transition disabled:opacity-30"
               >
                 <ChevronLeft size={16} />
               </button>
               <button
                 onClick={handleNext}
                 disabled={startIndex >= cards.length - visibleCards}
-                className="w-10 h-10 rounded-full border border-black flex items-center justify-center hover:bg-black hover:text-white transition disabled:opacity-30"
+                className="w-[41px] h-[41px] rounded-full border border-black flex items-center justify-center hover:bg-black hover:text-white transition disabled:opacity-30"
               >
                 <ChevronRight size={16} />
               </button>
             </div>
-            {/* Selected tags bar */}
             {getSelectedTagsPerService().length > 0 && (
-              <div className="flex gap-3 items-center ml-auto" style={{minHeight: '56px'}}>
+              <div
+                className="flex gap-3 items-center ml-auto"
+                style={{ minHeight: "56px" }}
+              >
                 {getSelectedTagsPerService().map((item, idx) => (
                   <span
                     key={idx}
                     className="px-6 py-2 rounded-full border border-gray-300 bg-white text-gray-900 text-base font-semibold shadow-sm flex items-center min-w-[48px] justify-center"
-                    style={{letterSpacing: '0.01em'}}>
+                  >
                     {item.tag}
                   </span>
                 ))}
                 <button
                   onClick={handleReset}
                   className="ml-2 px-6 py-2 rounded-full border border-gray-300 text-gray-700 text-base font-semibold flex items-center gap-2 transition min-w-[48px] justify-center shadow-sm"
-                  style={{letterSpacing: '0.01em'}}>
+                >
                   Reset filter <span className="text-lg font-bold">×</span>
                 </button>
               </div>
@@ -308,6 +298,7 @@ export const OurServices = () => {
           </div>
         </div>
       </div>
+      {/* the whole slider part starts*/}
     </section>
   );
 };
